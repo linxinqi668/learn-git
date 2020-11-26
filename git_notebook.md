@@ -58,12 +58,13 @@
   3. git switch -c branch_name
      创建一个新的分支并且完成切换
      
-  4. git merge branch_name
+  4. git merge branch_name -m "new version name"
      合并某个分支到当前分支，合并就是字面意思。
      注意可能会失败，因为可能会文件存在冲突，比如说两个分支都修改了同一个文件的同一个位置。解决办法就是先git merge，然后再手动修改（merge）冲突文件，再提交，新的版本就是我们期望的合并后的样子。说白了没法合并的文件手动处理，处理完提交的操作就相当于完成合并。
      
-     可选参数 --no-ff 表示不使用快速合并。同时最好加上-m选项写一下描述信息。
-     快速合并时git log --graph看不到被合并的分支，只会看到合并后master分支到达的版本号。而--no-ff会看到合并了哪一个分支。
+     可选参数:
+     （1）--no-ff 表示不使用快速合并。
+     		快速合并时git log --graph看不到被合并的分支，只会显示		新的分支。而--no-ff会看到合并了哪一个分支。
      
   5. git branch -d branch_name
      删除一个分支
